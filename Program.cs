@@ -54,11 +54,11 @@ foreach(var algorithm in algorithms)
 
     byte[] compressed = algorithm.Compress(originalFile);
 
-    FileUtils.WriteFile(Path.Combine(compressedPath, originalName + $"_{algorithm.Name}_" + "Compressed" + originalExtension), compressed);
+    FileUtils.WriteFile(Path.Combine(compressedPath, originalName + $"_{algorithm.Name}_" + "Compressed.bin"), compressed);
 
     Console.WriteLine($"[{algorithm.Name}] Kompresija zavrsena.");
 
-    byte[] compressedFile = FileUtils.ReadFile(Path.Combine(compressedPath, originalName + $"_{algorithm.Name}_" + "Compressed" + originalExtension));
+    byte[] compressedFile = FileUtils.ReadFile(Path.Combine(compressedPath, originalName + $"_{algorithm.Name}_" + "Compressed.bin"));
 
     Console.WriteLine($"[{algorithm.Name}] Dekompresija u toku...");
 
